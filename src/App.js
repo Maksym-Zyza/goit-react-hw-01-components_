@@ -1,36 +1,33 @@
 import React from "react";
-import Logo from "./components/Logo";
-import PaintingList from "./components/PaintingList";
-import Panel from "./components/Panel";
-import paintings from "./paintings.json";
+
+import user from "./components/User/user.json";
+import UserList from "./components/User/UserList";
+
+import statisticalData from "./components/Statistics/statistical-data.json";
+import Statistics from "./components/Statistics/Statistics";
+
+import friends from './components/Friends/friends.json';
+import FriendList from './components/Friends/FriendList';
+
+import transactions from './components/Transaction/transactions.json';
+import TransactionHistory from './components/Transaction/TransactionHistory';
 
 const App = () => {
   return (
     <div>
-      <Panel title="Последние новости">
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam,
-          obcaecati dolorum assumenda vitae aspernatur, aliquid numquam
-          explicabo, facere tenetur unde dolorem quo! Sit iusto natus at,
-          aliquam, repellendus repellat ipsa eligendi dolorem tempore atque
-          reprehenderit nulla magnam reiciendis, aliquid minus tenetur ipsam
-          fuga. Quas vel, sunt voluptatum debitis incidunt numquam?
-        </p>
 
-        <a href="">Читать...</a>
-      </Panel>
+      <h1> Профиль социальной сети</h1>      
+      <UserList user={user} />
 
-      <Panel>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
-          explicabo aperiam architecto perspiciatis quae amet. Porro magni
-          laudantium aspernatur debitis deserunt ipsam. Nostrum id accusamus
-          praesentium eum incidunt tenetur cum!
-        </p>
-      </Panel>
+      <h1> Секция статистики</h1>      
+      <Statistics title="Upload stats" stats={statisticalData} />
 
-      <Logo text="Главный компонент-контейнер приложения" />
-      <PaintingList paintings={paintings} />
+      <h1> Список друзей</h1>      
+      <FriendList friends={friends} />
+
+      <h1> История транзакций</h1>
+      <TransactionHistory items={transactions} />
+
     </div>
   );
 };
